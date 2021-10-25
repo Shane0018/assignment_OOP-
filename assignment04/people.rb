@@ -1,22 +1,17 @@
 class Person 
-    def initialize(first_name, last_name)
-        @first_name = first_name
-        @last_name = last_name
-    end 
-
-    def name 
-        "#{@first_name} #{@last_name}"
+    def initialize(name)
+        @name = name 
     end 
 
     def greeting
-        "Hi, my name is #{name}"
+        "Hi, my name is #{@name}"
     end 
 end 
 
 
 class Student < Person
-    def initialize(f, l)
-        super(f, l)
+    def initialize(n)
+        super(n) 
     end 
 
     def learn
@@ -25,8 +20,8 @@ class Student < Person
 end 
 
 class Instructor < Person
-    def initialize(f, l)
-        super(f, l)
+    def initialize(n)
+        super(n)
     end 
 
     def teach
@@ -34,10 +29,10 @@ class Instructor < Person
     end 
 end 
 
-p sam = Instructor.new("Sam", "Smith")
+p sam = Instructor.new("Sam")
 p sam.greeting 
-p samantha = Student.new("Samantha", "Tims") 
-p samantha.greeting
+p samantha = Student.new("Samantha") 
+p samantha.greeting 
 p sam.teach 
 p samantha.learn 
 p samantha.teach #the teach method is in the Instructor class, 
